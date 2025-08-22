@@ -1,3 +1,3 @@
-policy "allowed-terraform-version" {
+policy "required-tags" {
   enforcement_level = "soft-mandatory"
 }
