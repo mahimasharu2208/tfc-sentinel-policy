@@ -1,0 +1,11 @@
+import "tfplan"
+
+required_tags = ["Name", "Environment"]
+
+main = rule {
+  all tfplan.resources.aws_s3_bucket as _, instances {
+    all instances as _, r {
+      all required_tags as tag { tag in keys(r.applied.tags) }
+    }
+  }
+}
